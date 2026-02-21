@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="zw-editor.js"></script>
+</head>
+<body>
+  <div id="zones-widget"></div>
+
+<script>
+
+// Example init
+(async () => {
+  const api = await ZoneWidget.mount("#zones-widget", {
+    limit: 4,
+    center: [43.238949, 76.889709],
+    zoom: 12,
+    mode: "edit",
+    height: 360
+  });
+
+  localizeLeafletDrawRU();
+
+    // Change mode
+    // api.setMode("view"); 
+
+    // Init for view and load zones
+    // const api = await ZoneWidget.mount("#zones", { mode: "view" });
+    // const data = await fetch("/storage/zones/flat-25.json").then(r => r.json());
+    // api.setZones(data);
+
+})();
+</script>
+
+<style>
+    /* Need show attributions (BSD 2-Clause License) */
+  .leaflet-control-attribution {
+      display: none;
+  }
+
+  .leaflet-control-attribution-show{
+    font-size: 10px;
+    border-radius: 6px;
+    padding: 2px 6px;
+  }
+
+  .leaflet-control-attribution-show a{
+    text-decoration: none;
+    color: #555;
+  }
+</style>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="zw-render.js"></script>
+</head>
+<body>
+
+    <div style="height:400px;">
+        <div id="zoneMap"></div>
+    </div>
+
+<script>
+
+    // Example init
+    ZoneMapViewer.mount({
+        el: "zoneMap",
+        jsonUrl: "exported_zones.json",
+        options: {
+            fitToZones: true,
+            attributionText: "Leaflet | JCS"
+        }
+    });
+</script>
+
+</body>
+</html>
